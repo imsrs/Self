@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<bean id="myDemo" class="org.cap.model.CollectionDemo">
+	<property name="names">
+		<list>
+			<value>Jack</value>
+			<value>Tom</value>
+			<value>Jessie</value>
+			<value>Kamal</value>
+		</list>
+	</property>
+	
+	<property name="addresses">
+		<list>
+			<ref bean="address1"/>
+			<ref bean="address2"/>
+		</list>
+<!-- <props>
+		<prop key=""></prop>
+	</props>
+	
+	<map>
+		<entry></entry>
+	</map>
+	 -->	
+	</property>
+</bean>
+<bean id="address1" class="org.cap.model.Address">
+	<property name="stName" value="South Street"/>
+	<property name="city" value="Chennai"/>
+
+</bean>
+
+<bean id="address2" class="org.cap.model.Address">
+	<property name="stName" value="North Street"/>
+	<property name="city" value="Pune"/>
+
+</bean>
+</beans>
